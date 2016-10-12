@@ -38,6 +38,12 @@
             <artifactId>org.apache.karaf.features.core</artifactId>
             <version>3.0.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpclient</artifactId>
+		    <version>4.5</version>
+		</dependency>
     </dependencies>
 
 
@@ -63,10 +69,24 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Import-Package>*</Import-Package>
-
                     </instructions>
                 </configuration>
             </plugin>
+			<plugin>
+				<groupId>org.apache.karaf.tooling</groupId>
+				<artifactId>karaf-maven-plugin</artifactId>
+				<configuration>
+					<includeTransitiveDependency>true</includeTransitiveDependency>
+				</configuration>
+				<executions>
+					<execution>
+						<id>generate-features-descriptor</id>
+						<goals>
+							<goal>features-generate-descriptor</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
         </plugins>
     </build>
 </project>

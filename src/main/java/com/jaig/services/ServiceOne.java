@@ -1,9 +1,13 @@
 package com.jaig.services;
 
+	import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 	import javax.ws.rs.GET;
 	import javax.ws.rs.Path;
-	import javax.ws.rs.Produces;
-	import java.util.Collection;
+import javax.ws.rs.Produces;
+	import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Response;
+
 
 	/**
 	 * REST service to manipulate Karaf features
@@ -16,8 +20,8 @@ package com.jaig.services;
 	     * http://localhost:8181/cxf/services/serviceone
 	     */
 	    @GET
-		@Path("/serviceone")
-	    @Produces("application/xml")
-	    public String getServiceOne() throws Exception;
+		@Path("/getorder")
+	    @Produces("application/json")
+	    public Response getServiceOne(@QueryParam ("orderid") String orderId) throws Exception;
 	}
 
