@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.3.0" name="My feature">
+    <feature name="serviceone" description="Describe feature here" version="0.0.0">
+        <bundle>wrap:mvn:com.jaig.services/serviceone/1.0.0</bundle>
+        <bundle>wrap:mvn:org.apache.httpcomponents/httpclient/4.5</bundle>
+        <bundle>wrap:mvn:org.apache.httpcomponents/httpcore/4.4.1</bundle>
+        <bundle>wrap:mvn:commons-logging/commons-logging/1.2</bundle>
+        <bundle>wrap:mvn:commons-codec/commons-codec/1.9</bundle>
+    </feature>
+</features>
